@@ -13,15 +13,4 @@ jobs:
       - name: Pobierz pliki z repozytorium
         uses: actions/checkout@v5
 
-      - name: Uruchom plik EXE
-        shell: pwsh
-        run: |
-          ./DaneGov.exe
-
-      - name: Zapisz zmiany bezpośrednio w repozytorium
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add raport.txt
-          git commit -m "Automatyczny raport: $(date)" || echo "Brak zmian"
-          git push
+      
